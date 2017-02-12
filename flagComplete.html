@@ -1,0 +1,128 @@
+
+
+<html>
+
+<canvas id="myCanvas" width="400" height="400"
+style="border:1px solid #000000;"
+</canvas>
+
+<script>
+function getEvens(){
+	var evens = [];
+	for (var i = 0; i < arguments.length; i++) {
+		if(typeof arguments[i] == "number")
+			if (arguments[i] % 2 == 0) {
+				evens.push(arguments[i]);
+		};
+	};
+	return evens
+}
+
+function plistToObject(a){
+	var object = {};
+	for (var i = 0; i < a.length; i = i+2){
+		object[a[i]] = a[i+1];
+	}
+	return object;
+}
+
+function makeFnWithDefault(fn, defaultVal){
+
+	var newFn = function(x, y) {
+		if (y === undefined) {y = defaultVal};
+		return fn(x,y)};
+	return newFn
+}
+
+/*
+var canvas = document.getElementById("myCanvas");
+canvas.width = "800"
+var ctx = canvas.getContext("2d");
+ctx.font = "60px Arial";
+ctx.textAlign = "center";
+ctx.fillText("Hello World!", 200, 200)
+*/
+
+function drawBahamas(x, y, width, height, canvas, ctx){
+	ctx.fillStyle = "#77DDFF"
+	ctx.fillRect(x, y, width, height);
+	ctx.strokeRect(x, y, width, height);
+	ctx.fillStyle = "#FFFF00"
+	ctx.fillRect(x, y+height/3, width, height/3);
+	ctx.strokeRect(x, y+height/3, width, height/3);
+	ctx.fillStyle = "#000000"
+	ctx.beginPath();
+	ctx.moveTo(x,y);
+	ctx.lineTo(x+width/2, y+height/2)
+	ctx.lineTo(x, y+height)
+	ctx.fill();
+
+}
+
+function drawEU(x, y, width, height, canvas, ctx){
+	ctx.fillStyle = "#0000FF"
+	ctx.fillRect(x, y, width, height);
+	ctx.strokeRect(x, y, width, height);
+	var radius = height/20
+	var bigCircleRadius = height-6*radius
+	var midx = x+width/2
+	var midy = y+height/2
+	ctx.fillStyle = "#FFFF00"
+	for(theta = 0; theta < 2*Math.PI; theta += Math.PI/6){
+		ctx.beginPath();
+		ctx.arc(midx+Math.cos(theta)*bigCircleRadius/2,
+		midy+Math.sin(theta)*bigCircleRadius/2, radius,
+		0,2*Math.PI, true);
+		ctx.fill();	
+		ctx.stroke();
+	};
+
+	
+}
+
+function drawTiledFlags(margin, rows, cols, flagWidth, flagHeight){
+	var canvas = document.getElementById("myCanvas");
+	var ctx = canvas.getContext("2d");
+	canvas.width = (cols*flagWidth+2*margin).toString();
+	canvas.height = (rows*flagHeight+2*margin).toString();
+	for(row = 0; row < rows; row++){
+		for(col = 0; col < cols; col++){
+			if ((row+col)%2 == 0) {
+			drawBahamas(flagWidth*col+margin, flagHeight*row+margin, flagWidth,
+			 flagHeight, canvas, ctx);
+			}
+			else{
+				drawEU(flagWidth*col+margin, flagHeight*row+margin, flagWidth,
+			 flagHeight, canvas, ctx);
+			};
+		};
+	};
+};
+drawTiledFlags(10, 3, 5, 100, 60);
+
+function assert(test) {
+	if (!test) throw "Assertion error";
+}
+                                
+function arraysEqual(a1,a2) {
+	return JSON.stringify(a1)==JSON.stringify(a2);
+}
+                                
+function testGetEvens() {
+	console.log("Testing getEvens()...");
+	assert(arraysEqual(getEvens(2,3,4,5), [2,4]));
+	assert(arraysEqual(getEvens(2,3,4,5,"wow!"), [2,4]));
+	assert(arraysEqual(getEvens("Please don't crash"), []));
+	console.log("passed!");
+}
+var g = function(x,y) { return x+y; }
+var h = makeFnWithDefault(g, 6);
+console.log((h(2,3) == 5) && (h(2) == 8));  // prints true!
+
+testGetEvens() ;
+plistToObject(["Hello","world"]);
+
+</script>
+
+
+</html>
