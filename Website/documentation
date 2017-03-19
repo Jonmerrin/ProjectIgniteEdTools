@@ -1,0 +1,68 @@
+
+
+//Makes a button with an image on it
+createImgButton(x, y, length, width, label, f, img, opacity)
+	(x : number)     - x position
+	(y : number)     - y position
+	(length: number) - length of image (default = 10px)
+	(width: number)  - length of image (default = 10px)
+	(label: string)  - a tag (default = undefined)
+	(f : function)   - a function that takes no inputs. Is called when the button
+					   is clicked. (default = undefined)
+	(img : string)   - the 'path' to the image file (default = undefined)
+	(opacity: float) - a number between 0 and 1 (default = 1)
+	returns: JQuery reference to the button
+
+//Makes a button with text on it
+createTextButton(x, y, length="10px", width="10px", label=undefined, f=undefined, text="")
+	(x : number)     - x position
+	(y : number)     - y position
+	(length: number) - length of image (default = 10px)
+	(width: number)  - length of image (default = 10px)
+	(label: string)  - a tag (default = undefined)
+	(f : function)   - a function that takes no inputs. Is called when the button
+					   is clicked. (default = undefined)
+	(text : string)  - text to be displayed on the button
+	returns: JQuery reference to the button
+
+
+
+//Makes an image
+createImg(x, y, width, height, img, alt="", opt="thumbnail", f = undefined)
+	(x : number)     - x position
+	(y : number)     - y position
+	(width : number) - width of image
+	(height : number)- height of image
+	(img : string)   - the 'path' to the image file
+	(alt : string)   - alt text for the image (default = "")
+	(opt : string)	 - option for image type. Could be "thumbnail", "responsive", "rounded", or
+					   "circle". Look here for examples: 
+					   https://www.w3schools.com/bootstrap/bootstrap_ref_css_images.asp
+					   (default = "thumbnail")
+	(f : function)   - optional function to be called if image is clicked.
+	returns: JQuery reference to the image
+
+
+//Makes a header
+createHeader(x, y, font, size, text)
+	(x : number)     - x position
+	(y : number)     - y position
+	(font : string)  - a string containing the name of the font (first letter capitalized)
+	(size : number)  - font size
+	(text : string)  - text to be displayed
+
+//Makes a block of text
+createText(x, y, font, size, text)
+	(x : number)     - x position
+	(y : number)     - y position
+	(font : string)  - a string containing the name of the font (first letter capitalized)
+	(size : number)  - font size
+	(text : string)  - text to be displayed
+
+
+//Returns a function that links to the given page
+createLink(URL)
+	(URL : string)   - the URL to the page you want to link to, or the path to the file you want to display
+					   examples:
+					   				"http://www.google.com"
+					   				"/lib/example.html"
