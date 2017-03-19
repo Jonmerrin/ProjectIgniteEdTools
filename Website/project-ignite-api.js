@@ -38,15 +38,15 @@ var createImg = function(x, y, width, height, img, alt="", opt="thumbnail", f = 
 	return img;
 }
 
-var createHeader = function(x, y, font, size, text, border = false){
+var createHeader = function(x, y, font, size, text, border = false, margin = 5){
 	var sizeStr = size+"px";
 	var hdr = $('<h style='+'"font:'+font+'; font-size:'+sizeStr+';text-align:center;">'+text+'</h>');
 	$(hdr).css('position', 'absolute');
 	$(hdr).css('top', y);
 	$(hdr).css('left', x);
 	if(border){
-		$(hdr).css("padding", "10px");
-		$(hdr).css("border", "10px solid black");
+		$(hdr).css("padding", margin+"px");
+		$(hdr).css("border", "3px solid black");
 	}
 
 	$("body").append(hdr);
@@ -54,15 +54,15 @@ var createHeader = function(x, y, font, size, text, border = false){
 	return hdr;
 }
 
-var createText = function(x, y, font, size, text, border = false){
+var createText = function(x, y, font, size, text, border = false, margin = 5){
 	var sizeStr = size+"px";
 	var pgh = $('<p style='+'"font:'+font+' font-size:'+sizeStr+';text-align:center;">'+text+'</p>');
 	$(pgh).css('position', 'absolute');
 	$(pgh).css('top', y); //or wherever you want it
 	$(pgh).css('left', x);
 	if(border){
-		$(pgh).css("padding", "10px");
-		$(pgh).css("border", "10px solid black");
+		$(pgh).css("padding", margin+"px");
+		$(pgh).css("border", "3px solid black");
 	}
 	$("body").append(pgh);
 
