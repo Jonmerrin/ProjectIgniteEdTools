@@ -10,23 +10,21 @@ var createImgButton = function(x, y, length="10px", width="10px", label=undefine
 	$(btn).length = length;
 	$(btn).on("click", f);
 	$(btn).css('position', 'absolute');
-	$(btn).css('top', y); //or wherever you want it
+	$(btn).css('top', y);
 	$(btn).css('left', x); 
 	$("body").append(btn);
 	return btn;
 }
 
-var createTextButton = function(x, y, length="10px", width="10px", label=undefined, f=undefined, text=""){
-	var btn = $('<button class=btn-default>'+text+'</button>');
+var createTextButton = function(x, y, length="10px", width="10px", label=undefined, f=undefined, text="", font="Arial", fontSize=10, color="black"){
+	var btn = $('<button style="color:'+color+';height:'+length+';width:'+width+';position:absolute;top:'+y+'px;left:'+x+'px;">'+text+'</button>');
+	console.log('style="color:'+color+';height:'+length+';width:'+width+';position:absolute;top:'+y+'px;left:'+x+'px;"');
+					// style="color:blue;height:200px;width:200px;position:absolute;top:100px;left:100px;">
 
-	$(btn).width = width;
-	$(btn).length = length;
 	$(btn).on("click", f);
-	$(btn).css('position', 'absolute');
-	$(btn).css('top', y); //or wherever you want it
-	$(btn).css('left', x); 
 	$("body").append(btn);
 	return btn;
+
 }
 
 var createImg = function(x, y, width, height, img, alt="", opt="thumbnail", f = undefined){
@@ -42,23 +40,32 @@ var createImg = function(x, y, width, height, img, alt="", opt="thumbnail", f = 
 	return img;
 }
 
-var createHeader = function(x, y, font, size, text){
+var createHeader = function(x, y, font, size, text, border = false){
 	var sizeStr = size+"px";
 	var hdr = $('<h style='+'"font:'+font+'; font-size:'+sizeStr+';">'+text+'</h>');
 	$(hdr).css('position', 'absolute');
-	$(hdr).css('top', y); //or wherever you want it
+	$(hdr).css('top', y);
 	$(hdr).css('left', x);
+	if(border){
+		$(hdr).css("padding", "10px");
+		$(hdr).css("border", "10px solid black");
+	}
+
 	$("body").append(hdr);
 
 	return hdr;
 }
 
-var createText = function(x, y, font, size, text){
+var createText = function(x, y, font, size, text, border = false){
 	var sizeStr = size+"px";
-	var pgh = $('<p style='+'"font:'+font+' font-size:'+sizeStr+'">'+text+'</p>');
+	var pgh = $('<p style='+'"font:'+font+' font-size:'+sizeStr+';">'+text+'</p>');
 	$(pgh).css('position', 'absolute');
 	$(pgh).css('top', y); //or wherever you want it
 	$(pgh).css('left', x);
+	if(border){
+		$(pgh).css("padding", "10px");
+		$(pgh).css("border", "10px solid black");
+	}
 	$("body").append(pgh);
 
 	return pgh;
