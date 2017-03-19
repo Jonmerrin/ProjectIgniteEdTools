@@ -18,9 +18,7 @@ var createImgButton = function(x, y, length="10px", width="10px", label=undefine
 
 var createTextButton = function(x, y, length="10px", width="10px", label=undefined, f=undefined, text="", font="Arial", fontSize=10, color="black"){
 	var btn = $('<button style="color:'+color+';height:'+length+';width:'+width+';position:absolute;top:'+y+'px;left:'+x+'px;">'+text+'</button>');
-	console.log('style="color:'+color+';height:'+length+';width:'+width+';position:absolute;top:'+y+'px;left:'+x+'px;"');
-					// style="color:blue;height:200px;width:200px;position:absolute;top:100px;left:100px;">
-
+	
 	$(btn).on("click", f);
 	$("body").append(btn);
 	return btn;
@@ -42,7 +40,7 @@ var createImg = function(x, y, width, height, img, alt="", opt="thumbnail", f = 
 
 var createHeader = function(x, y, font, size, text, border = false){
 	var sizeStr = size+"px";
-	var hdr = $('<h style='+'"font:'+font+'; font-size:'+sizeStr+';">'+text+'</h>');
+	var hdr = $('<h style='+'"font:'+font+'; font-size:'+sizeStr+';text-align:center;">'+text+'</h>');
 	$(hdr).css('position', 'absolute');
 	$(hdr).css('top', y);
 	$(hdr).css('left', x);
@@ -58,7 +56,7 @@ var createHeader = function(x, y, font, size, text, border = false){
 
 var createText = function(x, y, font, size, text, border = false){
 	var sizeStr = size+"px";
-	var pgh = $('<p style='+'"font:'+font+' font-size:'+sizeStr+';">'+text+'</p>');
+	var pgh = $('<p style='+'"font:'+font+' font-size:'+sizeStr+';text-align:center;">'+text+'</p>');
 	$(pgh).css('position', 'absolute');
 	$(pgh).css('top', y); //or wherever you want it
 	$(pgh).css('left', x);
