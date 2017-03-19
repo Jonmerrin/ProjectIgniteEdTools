@@ -44,20 +44,24 @@ createImg(x, y, width, height, img, alt="", opt="thumbnail", f = undefined)
 
 
 //Makes a header
-createHeader(x, y, font, size, text)
+createHeader(x, y, font, size, text, border, margin)
 	(x : number)     - x position
 	(y : number)     - y position
 	(font : string)  - a string containing the name of the font (first letter capitalized)
 	(size : number)  - font size
 	(text : string)  - text to be displayed
+	(border : boolean) - true if you want a border, false if you don't (default = false)
+	(margin : number) - how many pixels away from the text you want the border (default = 5)
 
 //Makes a block of text
-createText(x, y, font, size, text)
+createText(x, y, font, size, text, border, margin)
 	(x : number)     - x position
 	(y : number)     - y position
 	(font : string)  - a string containing the name of the font (first letter capitalized)
 	(size : number)  - font size
 	(text : string)  - text to be displayed
+	(border : boolean) - true if you want a border, false if you don't (default = false)
+	(margin : number) - how many pixels away from the text you want the border (default = 5)
 
 
 //Returns a function that links to the given page
