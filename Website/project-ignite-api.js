@@ -1,6 +1,21 @@
-var WIDTH = window.innerWidth;
+var WIDTH  = window.innerWidth;
 var HEIGHT = window.innerHeight;
+var data   = $.getJSON("data.json");
 
+var setBackgroundColor = function(color){
+	$("body").css("background-color", color);
+}
+var setBackgroundImage = function(path){
+	$("body").css("background-image", path);
+}
+
+var loadRandomQuestion = function(categoryList){
+	var superCat = data;
+	for (var i = 0; i < categoryList.length; i++) {
+		superCat = superCat.categoryList[i];
+	};
+	return superCat.questions[(Math.floor(Math.random()*4))];
+}
 
 var createImgButton = function(x, y, length="10px", width="10px", label=undefined, f=undefined, img=undefined, opacity = 1){
 	var btn = $('<button class=btn-default></button>');

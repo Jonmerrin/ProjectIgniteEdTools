@@ -14,5 +14,6 @@ $("body").append(btn);
 createImgButton(200,100,100,100, "yes", function(e){console.log("works");}, "http://i.stack.imgur.com/e2S63.png");
 createImgButton(300,400,100,100, "yes", function(e){console.log("works");}, "http://i.stack.imgur.com/e2S63.png");
 createImg(100,100,40,100, "http://i.stack.imgur.com/e2S63.png", "hey there", undefined, function(e){console.log("yep");});
-createHeader(300,300,"Arial", 50, "Hello World");
+createHeader(300,300,"Arial", 50, "Hello World", true);
+createText(600,300,"Arial", 50, "Hello World", true);
 createTextButton(300,200,"200px","200px","ok", createLink("http://google.com"), "hey google", "Arial", 30, "blue");
