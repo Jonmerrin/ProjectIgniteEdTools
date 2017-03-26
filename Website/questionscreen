@@ -1,0 +1,26 @@
+var backgroundColor = "#E6E5EA"
+var mainColor = "#33C2A6"
+var textColor = "#1E1E17"
+var complementColor = "#FF4466"
+
+createImgButton(0, 0, length=(HEIGHT*3/32)+"px", width=(HEIGHT*3/32)+"px", undefined, undefined, "homebutton.png", 1);
+
+createHeader(600, (HEIGHT/32), "Arial", (HEIGHT/16), "Subject");
+
+createHeader(600, (HEIGHT/16), "Arial", (HEIGHT/18), "Question");
+
+createText(0, 150, "Arial" , 75, "A", true, 40)
+
+createText(0, 250, "Arial" , 75, "B", true, 40)
+
+createText(0, 350, "Arial" , 75, "C", true, 40)
+
+createText(0, 450, "Arial" , 75, "D", true, 40)
+
+createText(0, 750, "Arial" , 75, "Give Up", true, 40)
+
+createText(300, 750, "Arial" , 75, "Timer", true, 40)
+
+createText(600, 750, "Arial" , 75, "Score", true, 40)
+
+createText(900, 750, "Arial" , 75, "Skip", true, 40)
