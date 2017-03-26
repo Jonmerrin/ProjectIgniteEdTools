@@ -12,7 +12,7 @@ var setBackgroundImage = function(path){
 var loadRandomQuestion = function(categoryList){
 	var superCat = data;
 	for (var i = 0; i < categoryList.length; i++) {
-		superCat = superCat.categoryList[i];
+		superCat = superCat[categoryList[i]];
 	};
 	return superCat.questions[(Math.floor(Math.random()*4))];
 }
