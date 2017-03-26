@@ -14,7 +14,7 @@ createImgButton(x, y, length, width, label, f, img, opacity)
 	returns: JQuery reference to the button
 
 //Makes a button with text on it
-createTextButton(x, y, length="10px", width="10px", label=undefined, f=undefined, text="")
+createTextButton(x, y, length="10px", width="10px", label=undefined, f=undefined, text="", font, fontSize, color)
 	(x : number)     - x position
 	(y : number)     - y position
 	(length: number) - length of image (default = 10px)
@@ -23,6 +23,7 @@ createTextButton(x, y, length="10px", width="10px", label=undefined, f=undefined
 	(f : function)   - a function that takes no inputs. Is called when the button
 					   is clicked. (default = undefined)
 	(text : string)  - text to be displayed on the button
+	
 	returns: JQuery reference to the button
 
 
@@ -44,7 +45,7 @@ createImg(x, y, width, height, img, alt="", opt="thumbnail", f = undefined)
 
 
 //Makes a header
-createHeader(x, y, font, size, text, border, margin)
+createHeader(x, y, font, size, text, border, margin, color)
 	(x : number)     - x position
 	(y : number)     - y position
 	(font : string)  - a string containing the name of the font (first letter capitalized)
@@ -52,9 +53,10 @@ createHeader(x, y, font, size, text, border, margin)
 	(text : string)  - text to be displayed
 	(border : boolean) - true if you want a border, false if you don't (default = false)
 	(margin : number) - how many pixels away from the text you want the border (default = 5)
+	(color : string) - the color of the text (default = black)
 
 //Makes a block of text
-createText(x, y, font, size, text, border, margin)
+createText(x, y, font, size, text, border, margin, color)
 	(x : number)     - x position
 	(y : number)     - y position
 	(font : string)  - a string containing the name of the font (first letter capitalized)
@@ -62,6 +64,7 @@ createText(x, y, font, size, text, border, margin)
 	(text : string)  - text to be displayed
 	(border : boolean) - true if you want a border, false if you don't (default = false)
 	(margin : number) - how many pixels away from the text you want the border (default = 5)
+	(color : string) - the color of the text (default = black)
 
 
 //Returns a function that links to the given page
