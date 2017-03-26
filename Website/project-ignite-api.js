@@ -82,7 +82,7 @@ var createTable = function(x,y,width, font, size, headContent, content, border=f
 		                                     + (rowstripe?' table-striped':'') //adds table-striped class
 		                                     + '" style="font:'+font
 		                                     +'; font-size:'+sizeStr
-		                                     +'text-align:center;">';
+		                                     +';">';
   //HEADER
     tableStr += "<thead><tr>";
 	for(i=0; i<headContent.length; i++){
