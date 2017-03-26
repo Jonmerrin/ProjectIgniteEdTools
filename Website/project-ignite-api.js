@@ -90,6 +90,78 @@ var createLink = function(URL){
 	};
 }
 
+var createTable = function(x,y,width, font, size, headContent, content, border=false, rowstripe=true){
+	var sizeStr = size+"px";
+	var tableStr = '<div>'
+	tableStr += '<table class="table' + (border?' table-bordered':'')  //adds table-bordered class
+		                                     + (rowstripe?' table-striped':'') //adds table-striped class
+		                                     + '" style="font:'+font
+		                                     +'; font-size:'+sizeStr
+		                                     +'text-align:center;">';
+  //HEADER
+    tableStr += "<thead><tr>";
+	for(i=0; i<headContent.length; i++){
+		tableStr += "<th>" + headContent[i] + "</th>";
+	}
+	tableStr += "</tr></thead>";
+
+  //BODY
+ 	console.log(width);
+    for(row=0; row<content.length; row++){
+    	tableStr += "<tr>";
+    	for(col=0; col<content[row].length; col++){
+    		tableStr += "<td>" + content[row][col] + "</td>";
+    	}
+    	tableStr += "</tr>";
+    }
+
+  //CLOSE TAG
+    tableStr += "</table></div>";
+	var table = $(tableStr);
+	$(table).css('position', 'absolute');
+	$(table).css('top', y); //or wherever you want it
+	$(table).css('left', x);
+	$(table).css('width', width);
+	// $(table).css('height', height);
+	// $(table).css('margin', margin+"px");
+
+	$("body").append(table);
+
+	return table;
+}
+
+
+          // <table class="table table-striped">
+          //   <thead>
+          //     <tr>
+          //       <th>#</th>
+          //       <th>First Name</th>
+          //       <th>Last Name</th>
+          //       <th>Username</th>
+          //     </tr>
+          //   </thead>
+          //   <tbody>
+          //     <tr>
+          //       <td>1</td>
+          //       <td>Mark</td>
+          //       <td>Otto</td>
+          //       <td>@mdo</td>
+          //     </tr>
+          //     <tr>
+          //       <td>2</td>
+          //       <td>Jacob</td>
+          //       <td>Thornton</td>
+          //       <td>@fat</td>
+          //     </tr>
+          //     <tr>
+          //       <td>3</td>
+          //       <td>Larry</td>
+          //       <td>the Bird</td>
+          //       <td>@twitter</td>
+          //     </tr>
+          //   </tbody>
+          // </table>
+
 
 
 
