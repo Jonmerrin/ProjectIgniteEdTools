@@ -70,3 +70,23 @@ createLink(URL)
 					   examples:
 					   				"http://www.google.com"
 					   				"/lib/example.html"
+
+//Makes a table
+createTable(x,y,width, font, size, headContent, content, border, rowstripe)
+    (x : number)		- x position
+    (y : number) 		- y position
+    (width : number)	- total width of the table
+    (font : string)		- a string containing the name of the font (first letter capitalized)
+    (size : number)		- font size
+    (headContent : string array)	- an array of strings representing the content of the header
+    (content : string array array)	- an array of rows, where each row is an array of strings representing the content of that row (see example)
+    (border : boolean)	- true if you want a border, false otherwise (default = false)
+    (rowstripe : boolean) - true if you want the background color of the rows to alternate colors (default=true)
+
+   	EXAMPLE:
+		createTable(20,20,250,"Arial",15,["a","b","c"],
+		    [
+		        [ "d", "e", "f"],
+		        ["g", "h", "i"],
+		        ["j", "k", "l"]
+		    ], false, true)
