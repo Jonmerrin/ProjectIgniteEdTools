@@ -38,9 +38,9 @@ var createImg = function(x, y, width, height, img, alt="", opt="thumbnail", f = 
 	return img;
 }
 
-var createHeader = function(x, y, font, size, text, border = false, margin = 5){
+var createHeader = function(x, y, font, size, text, border = false, margin = 5, color = "black"){
 	var sizeStr = size+"px";
-	var hdr = $('<h style='+'"font:'+font+'; font-size:'+sizeStr+';text-align:center;">'+text+'</h>');
+	var hdr = $('<h style='+'"font:'+font+'; font-size:'+sizeStr+';text-align:center;color:'+color+';">'+text+'</h>');
 	$(hdr).css('position', 'absolute');
 	$(hdr).css('top', y);
 	$(hdr).css('left', x);
@@ -54,9 +54,9 @@ var createHeader = function(x, y, font, size, text, border = false, margin = 5){
 	return hdr;
 }
 
-var createText = function(x, y, font, size, text, border = false, margin = 5){
+var createText = function(x, y, font, size, text, border = false, margin = 5, color = "black"){
 	var sizeStr = size+"px";
-	var pgh = $('<p style='+'"font:'+font+' font-size:'+sizeStr+';text-align:center;">'+text+'</p>');
+	var pgh = $('<p style='+'"font:'+font+'; font-size:'+sizeStr+';text-align:center;color:'+color+';">'+text+'</p>');
 	$(pgh).css('position', 'absolute');
 	$(pgh).css('top', y); //or wherever you want it
 	$(pgh).css('left', x);
