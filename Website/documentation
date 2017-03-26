@@ -93,3 +93,21 @@ createTable(x,y,width, font, size, headContent, content, border, rowstripe)
 		        ["g", "h", "i"],
 		        ["j", "k", "l"]
 		    ], false, true)
+
+//loads a random question of a category
+loadQuestion(categoryList)
+	(categoryList : string list) - A list of the categories/subcategories you have to go through to get to this one
+									For example: math - geometry - etc.
+	EXAMPLE:
+		loadQuestion(["science", "physics"])
+
+		This will return an object of the form:
+		{text          : "What is the equation for calculating force?",
+		 answers       : ["F  = f", "F = mv", "F = ma", "There is no way to calculate force"],
+		 correctAnswer : "F = ma"}
+
+		 To access these, you would do the following:
+		 var q = loadQuestion(["science", "physics"]);
+		 var answers       = q.answers;
+		 var correctAnswer = q.correctAnswer;
+		 var questionText  = q.text;
