@@ -7,38 +7,68 @@ createImgButton(0, 0, (HEIGHT*3/32)+"px", (HEIGHT*3/32)+"px", undefined, undefin
 
 
 
-var question = loadRandomQuestion(catPath);
-var answers = question.answers;
-var correctAnswer = question.correctAnswer;
-var questionText = question.text;
+// var question = loadRandomQuestion(catPath);
+// var answers = question.answers;
+// var correctAnswer = question.correctAnswer;
+// var questionText = question.text;
+var questionText = "Which of these is the correct answer?";
+var correctAnswer = "This one!";
+var answers = ["This one!", "Not this one", "Not this one either", "Nope!"];
 
-
-createTable(200,200, 1200, "Arial", 30, ["Letter", "Answer"],
-	[
-		["A", "Answer"],
-		["B", "Answer"],
-		["C", "Answer"],
-		["D", "Answer"] 
-	], true, true)
-
-
-
+function shuffle(array) {
+    for (var i = array.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
+    return array;
+}
 
 createHeader(600, (HEIGHT/32), "Arial", (HEIGHT/24), "Subject");
 
-createHeader(600, (HEIGHT/8), "Arial", (HEIGHT/20), "Question");
+createHeader(600, (HEIGHT/8), "Arial", (HEIGHT/20), questionText);
+
+
+answers = shuffle(answers);
+
+// createTextButton(20, HEIGHT/3, (HEIGHT/6)+"px", ((WIDTH/2)-30)+"px", undefined, undefined, answers[0], textColor);
+// createTextButton(WIDTH/2+10, HEIGHT/3, (HEIGHT/6)+"px", ((WIDTH/2)-30)+"px", undefined, undefined, answers[1], textColor);
+// createTextButton(20, HEIGHT/2 + 20, (HEIGHT/6)+"px", ((WIDTH/2)-30)+"px", undefined, undefined, answers[2], textColor);
+// createTextButton(WIDTH/2+10, HEIGHT/2 + 20, (HEIGHT/6)+"px", ((WIDTH/2)-30)+"px", undefined, undefined, answers[3], textColor);
+
+for(i=0;i<4;i++){
+    // x = min x value of the button
+    if(i%2 == 0){
+        var x = 20
+    }
+    else{
+        var x = WIDTH/2 + 10
+    }
+    // y = min y value of the button
+    if(i<2){
+        var y = HEIGHT/3;
+    }
+    else{
+        var y = HEIGHT/2 + 20;
+    }
+
+    if(answers[i]==correctAnswer){
+        var buttonFn = function(){window.location.href = "afterquestion.html";}
+    }
+    else{
+        var buttonFn = function(){window.location.href = "afterquestionincorrect.html?correctAnswer=" + correctAnswer;}
+    }
+
+    createTextButton(x, y, (HEIGHT/6)+"px", ((WIDTH/2)-30)+"px", undefined, buttonFn, answers[i], textColor);
+}
 
 
 
+createTextButton(20, HEIGHT-HEIGHT/6-20, (HEIGHT/6)+"px", (WIDTH/8)+"px", undefined, undefined, "Give Up", textColor);
 
+// createTextButton(467, HEIGHT-HEIGHT/6, length=(HEIGHT/6)+"px", width=(WIDTH/8)+"px", undefined, undefined, "Timer", textColor);
 
+// createTextButton(934, HEIGHT-HEIGHT/6, length=(HEIGHT/6)+"px", width=(WIDTH/8)+"px", undefined, undefined, "Score", textColor);
 
-
-
-createTextButton(0, HEIGHT-HEIGHT/6, length=(HEIGHT/6)+"px", width=(WIDTH/8)+"px", undefined, undefined, "Give Up", textColor);
-
-createTextButton(467, HEIGHT-HEIGHT/6, length=(HEIGHT/6)+"px", width=(WIDTH/8)+"px", undefined, undefined, "Timer", textColor);
-
-createTextButton(934, HEIGHT-HEIGHT/6, length=(HEIGHT/6)+"px", width=(WIDTH/8)+"px", undefined, undefined, "Score", textColor);
-
-createTextButton(1400, HEIGHT-HEIGHT/6, length=(HEIGHT/6)+"px", width=(WIDTH/8)+"px", undefined, undefined, "Skip", textColor);
+createTextButton(WIDTH*(7/8)-20, HEIGHT-HEIGHT/6-20, (HEIGHT/6)+"px", (WIDTH/8)+"px", undefined, undefined, "Skip", textColor);
