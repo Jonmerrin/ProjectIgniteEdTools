@@ -7,6 +7,12 @@ createImgButton(0, 0, (HEIGHT*3/32)+"px", (HEIGHT*3/32)+"px", undefined, undefin
 
 
 
+var question = loadRandomQuestion(catPath);
+var answers = question.answers;
+var correctAnswer = question.correctAnswer;
+var questionText = question.text;
+
+
 createTable(200,200, 1200, "Arial", 30, ["Letter", "Answer"],
 	[
 		["A", "Answer"],
