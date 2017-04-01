@@ -14,7 +14,7 @@ var loadRandomQuestion = function(categoryList){
 	for (var i = 0; i < categoryList.length; i++) {
 		superCat = superCat[categoryList[i]];
 	};
-	return superCat.questions[(Math.floor(Math.random()*4))];
+	return superCat[questions[(Math.floor(Math.random()*4))]];
 }
 
 var createImgButton = function(x, y, length="10px", width="10px", label=undefined, f=undefined, img=undefined, opacity = 1){
