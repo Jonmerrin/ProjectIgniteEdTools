@@ -18,19 +18,9 @@ var questionText = question.text;
 var subject = catPath[catPath.length - 1];
 
 
-function shuffle(array) {
-    for (var i = array.length - 1; i > 0; i--) {
-        var j = Math.floor(Math.random() * (i + 1));
-        var temp = array[i];
-        array[i] = array[j];
-        array[j] = temp;
-    }
-    return array;
-}
+var subjectHeader = createHeader(600, (HEIGHT/32), "Arial", (HEIGHT/24), /*insert subject here*/);
 
-createHeader(600, (HEIGHT/32), "Arial", (HEIGHT/24), subject);
-
-createHeader(600, (HEIGHT/8), "Arial", (HEIGHT/20), questionText);
+var questionTextHeader = createHeader(600, (HEIGHT/8), "Arial", (HEIGHT/20), /*insert question text here*/);
 
 
 answers = shuffle(answers);
@@ -66,8 +56,5 @@ for(i=0;i<4;i++){
 
 createTextButton(20, HEIGHT-HEIGHT/6-20, (HEIGHT/6)+"px", (WIDTH/8)+"px", undefined, undefined, "Give Up", textColor);
 
-// createTextButton(467, HEIGHT-HEIGHT/6, length=(HEIGHT/6)+"px", width=(WIDTH/8)+"px", undefined, undefined, "Timer", textColor);
-
-// createTextButton(934, HEIGHT-HEIGHT/6, length=(HEIGHT/6)+"px", width=(WIDTH/8)+"px", undefined, undefined, "Score", textColor);
 
 createTextButton(WIDTH*(7/8)-20, HEIGHT-HEIGHT/6-20, (HEIGHT/6)+"px", (WIDTH/8)+"px", undefined, undefined, "Skip", textColor);
