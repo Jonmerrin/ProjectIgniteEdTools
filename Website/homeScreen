@@ -1,0 +1,13 @@
+
+
+
+
+createTextButton(x, y, length="10px", width="10px", label=undefined, f=undefined, text="")
+	(x : number)
+	(y : number)     - y position
+	(length: number) - length of image (default = 10px)
+	(width: number)  - length of image (default = 10px)
+	(label: string)  - a tag (default = undefined)
+	(f : function)   - a function that takes no inputs. Is called when the button
+					   is clicked. (default = undefined)
+	(text : string)  - text to be displayed on the button
