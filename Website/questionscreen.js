@@ -12,17 +12,11 @@ var catPath = info.categoryList;
 
 
 var question = loadRandomQuestion(catPath);
-console.log(question);
 var answers = question.answers;
-console.log(answers);
 var correctAnswer = question.correctAnswer;
 var questionText = question.text;
 var subject = catPath[catPath.length - 1];
 
-// var questionText = "Which of these is the correct answer?";
-// var correctAnswer = "This one!";
-// var subject = "subjective";
-// var answers = ["This one!", "Not this one", "Not this one either", "Nope!"];
 
 function shuffle(array) {
     for (var i = array.length - 1; i > 0; i--) {
@@ -41,10 +35,6 @@ createHeader(600, (HEIGHT/8), "Arial", (HEIGHT/20), questionText);
 
 answers = shuffle(answers);
 
-// createTextButton(20, HEIGHT/3, (HEIGHT/6)+"px", ((WIDTH/2)-30)+"px", undefined, undefined, answers[0], textColor);
-// createTextButton(WIDTH/2+10, HEIGHT/3, (HEIGHT/6)+"px", ((WIDTH/2)-30)+"px", undefined, undefined, answers[1], textColor);
-// createTextButton(20, HEIGHT/2 + 20, (HEIGHT/6)+"px", ((WIDTH/2)-30)+"px", undefined, undefined, answers[2], textColor);
-// createTextButton(WIDTH/2+10, HEIGHT/2 + 20, (HEIGHT/6)+"px", ((WIDTH/2)-30)+"px", undefined, undefined, answers[3], textColor);
 
 for(i=0;i<4;i++){
     // x = min x value of the button
