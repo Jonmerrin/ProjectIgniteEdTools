@@ -1,6 +1,6 @@
 var WIDTH  = window.innerWidth;
 var HEIGHT = window.innerHeight;
-var data   = $.getJSON("data.json");
+//var data   = JSON.parse(metadata);
 
 var setBackgroundColor = function(color){
 	$("body").css("background-color", color);
@@ -10,11 +10,27 @@ var setBackgroundImage = function(path){
 }
 
 var loadRandomQuestion = function(categoryList){
-	var superCat = data;
+	var superCat = data.categories;
 	for (var i = 0; i < categoryList.length; i++) {
 		superCat = superCat[categoryList[i]];
 	};
-	return superCat[questions[(Math.floor(Math.random()*4))]];
+	return superCat.questions[(Math.floor(Math.random()*(superCat.questions.length)))];
+}
+
+var parseInfo = function(){
+	var dataL = {"categoryList" : []};
+	var infoTemp = document.location.href.split('?')[1]
+	if(infoTemp == undefined) {return {};}
+	var info = infoTemp.split('&');
+	for (var i = 0; i < info.length; i++) {
+		var item = info[i].split("=");
+		if(item[0] == "category"){
+			dataL.categoryList.push(item[1].replace("%20", " "));
+		} else {
+			dataL[item[0]] = item[1].replace("%20", " ");
+		}
+	};
+	return dataL;
 }
 
 var createImgButton = function(x, y, length="10px", width="10px", label=undefined, f=undefined, img=undefined, opacity = 1){
@@ -88,6 +104,15 @@ var createLink = function(URL){
 	return function(){
 		window.location.href = URL;
 	};
+}
+
+var createLinkWithData = function(URL, info){
+	if(URL.includes("?")){
+		URL += "&";
+	} else {
+		URL += "?";
+	}
+	return createLink(URL+info);
 }
 
 var createTable = function(x,y,width, font, size, headContent, content, border=false, rowstripe=true){

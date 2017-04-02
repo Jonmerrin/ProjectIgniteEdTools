@@ -1,18 +1,21 @@
-{
-	"categories": [
+data = {
+	"categories": 
 			{
-			"name"        : "math",
-			"questions"   : [
+			"math": {
+				"name" 		  : "math",
+				"questions"   : [
 						     {"answers":["1","2","3","4"], "correctAnswer":"3", "text": "question text"}
-						    ]
+							    ]
 			},
-			{
+			
+			"science":{
 			"name"        : "science",
 			"subcategory" : {
 							  "name" : "physics",
 							  "questions":[]
 							}
 			}
+		}
 
-		]
+		
 }

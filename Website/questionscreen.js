@@ -6,14 +6,23 @@ var complementColor = "#FF4466"
 createImgButton(0, 0, (HEIGHT*3/32)+"px", (HEIGHT*3/32)+"px", undefined, undefined, "homebutton.png", 1);
 
 
+var info = parseInfo();
+var catPath = info.categoryList;
 
-// var question = loadRandomQuestion(catPath);
-// var answers = question.answers;
-// var correctAnswer = question.correctAnswer;
-// var questionText = question.text;
-var questionText = "Which of these is the correct answer?";
-var correctAnswer = "This one!";
-var answers = ["This one!", "Not this one", "Not this one either", "Nope!"];
+
+
+var question = loadRandomQuestion(catPath);
+console.log(question);
+var answers = question.answers;
+console.log(answers);
+var correctAnswer = question.correctAnswer;
+var questionText = question.text;
+var subject = catPath[catPath.length - 1];
+
+// var questionText = "Which of these is the correct answer?";
+// var correctAnswer = "This one!";
+// var subject = "subjective";
+// var answers = ["This one!", "Not this one", "Not this one either", "Nope!"];
 
 function shuffle(array) {
     for (var i = array.length - 1; i > 0; i--) {
@@ -25,7 +34,7 @@ function shuffle(array) {
     return array;
 }
 
-createHeader(600, (HEIGHT/32), "Arial", (HEIGHT/24), "Subject");
+createHeader(600, (HEIGHT/32), "Arial", (HEIGHT/24), subject);
 
 createHeader(600, (HEIGHT/8), "Arial", (HEIGHT/20), questionText);
 
@@ -54,10 +63,10 @@ for(i=0;i<4;i++){
     }
 
     if(answers[i]==correctAnswer){
-        var buttonFn = function(){window.location.href = "afterquestion.html";}
+        var buttonFn = createLinkWithData("afterquestion.html", "subject="+subject);
     }
     else{
-        var buttonFn = function(){window.location.href = "afterquestionincorrect.html?correctAnswer=" + correctAnswer;}
+        var buttonFn = createLinkWithData("afterquestionincorrect.html?subject="+subject, "answer=" + correctAnswer);
     }
 
     createTextButton(x, y, (HEIGHT/6)+"px", ((WIDTH/2)-30)+"px", undefined, buttonFn, answers[i], textColor);
