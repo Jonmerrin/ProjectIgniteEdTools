@@ -117,12 +117,17 @@ var createLink = function(URL){
 }
 
 var createLinkWithData = function(URL, info){
-	if(URL.includes("?")){
-		URL += "&";
-	} else {
-		URL += "?";
-	}
-	return createLink(URL+info);
+
+	var newURL = URL;
+	for (var i = 0; i < info.length; i++) {
+		if(i==0){
+			newURL += "?";
+		} else {
+			newURL += "&";
+		}
+		newURL+=info[i];
+	};
+	return createLink(newURL);
 }
 
 var createTable = function(x,y,width, font, size, headContent, content, border=false, rowstripe=true){
