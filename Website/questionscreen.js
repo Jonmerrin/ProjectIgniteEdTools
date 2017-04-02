@@ -3,7 +3,7 @@ var mainColor = "#33C2A6"
 var textColor = "#1E1E17"
 var complementColor = "#FF4466"
 
-createImgButton(0, 0, (HEIGHT*3/32)+"px", (HEIGHT*3/32)+"px", undefined, undefined, "homebutton.png", 1);
+createImgButton(0, 0, (HEIGHT*3/32)+"px", (HEIGHT*3/32)+"px", undefined, createLink("index.html"), "homebutton.png", 1);
 
 
 var info = parseInfo();
@@ -18,9 +18,9 @@ var questionText = question.text;
 var subject = catPath[catPath.length - 1];
 
 
-var subjectHeader = createHeader(600, (HEIGHT/32), "Arial", (HEIGHT/24), /*insert subject here*/);
+var subjectHeader = createHeader(600, (HEIGHT/32), "Arial", (HEIGHT/24), subject);
 
-var questionTextHeader = createHeader(600, (HEIGHT/8), "Arial", (HEIGHT/20), /*insert question text here*/);
+var questionTextHeader = createHeader(600, (HEIGHT/8), "Arial", (HEIGHT/20), questionText, textColor);
 
 
 answers = shuffle(answers);
@@ -54,7 +54,27 @@ for(i=0;i<4;i++){
 
 
 
-createTextButton(20, HEIGHT-HEIGHT/6-20, (HEIGHT/6)+"px", (WIDTH/8)+"px", undefined, undefined, "Give Up", textColor);
+createTextButton(20, HEIGHT-HEIGHT/6-20, (HEIGHT/6)+"px", (WIDTH/8)+"px", undefined, createLink("afterquestionincorrect.html"), "Give Up", textColor);
 
 
-createTextButton(WIDTH*(7/8)-20, HEIGHT-HEIGHT/6-20, (HEIGHT/6)+"px", (WIDTH/8)+"px", undefined, undefined, "Skip", textColor);
+createTextButton(WIDTH*(7/8)-20, HEIGHT-HEIGHT/6-20, (HEIGHT/6)+"px", (WIDTH/8)+"px", undefined, function(){document.location.reload();}, "Skip", textColor);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -9,16 +9,12 @@ var subject = info.subject;
 var qtext   = info.text;
 var answer  = info.answer;
 
-createImgButton(0, 0, length=(HEIGHT*3/32)+"px", width=(HEIGHT*3/32)+"px", undefined, undefined, "homebutton.png", 1);
+createImgButton(0, 0, length=(HEIGHT*3/32)+"px", width=(HEIGHT*3/32)+"px", undefined, createLink("index.html"), "homebutton.png", 1);
 
 createHeader(700, (HEIGHT/32), "Arial", (HEIGHT/24), subject);
 
 createText(500, (HEIGHT/5), "Arial", 40, "Your Answer is Correct!", false, 5, textColor)
 
-createTextButton(0, HEIGHT-HEIGHT/6, length=(HEIGHT/6)+"px", width=(WIDTH/8)+"px", undefined, undefined, "Give Up", textColor);
+createTextButton(WIDTH - WIDTH, HEIGHT-HEIGHT/6, length=(HEIGHT/6)+"px", width=(WIDTH/8)+"px", undefined, createLink("afterquestionincorrect.html"), "Give Up", textColor);
 
-createTextButton(467, HEIGHT-HEIGHT/6, length=(HEIGHT/6)+"px", width=(WIDTH/8)+"px", undefined, undefined, "Timer", textColor);
-
-createTextButton(934, HEIGHT-HEIGHT/6, length=(HEIGHT/6)+"px", width=(WIDTH/8)+"px", undefined, undefined, "Score", textColor);
-
-createTextButton(1400, HEIGHT-HEIGHT/6, length=(HEIGHT/6)+"px", width=(WIDTH/8)+"px", undefined, undefined, "Skip", textColor);
+createTextButton(WIDTH - WIDTH/8, HEIGHT-HEIGHT/6, length=(HEIGHT/6)+"px", width=(WIDTH/8)+"px", undefined, undefined, "Skip", textColor);
