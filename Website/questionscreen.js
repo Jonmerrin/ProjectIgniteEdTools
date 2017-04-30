@@ -46,7 +46,7 @@ for(i=0;i<4;i++){
         var buttonFn = createLinkWithData("afterquestion.html", ["subject="+subject]);
     }
     else{
-        var buttonFn = createLinkWithData("afterquestionincorrect.html", ["?subject="+subject, "answer=" + correctAnswer]);
+        var buttonFn = createLinkWithData("afterquestionincorrect.html", ["subject="+subject, "answer=" + correctAnswer]);
     }
 
     createTextButton(x, y, (HEIGHT/6)+"px", ((WIDTH/2)-30)+"px", undefined, buttonFn, answers[i], textColor);

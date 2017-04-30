@@ -19,7 +19,7 @@ var subjects = ["math", "science", "history", "random"];
 for (var i = 0; i < 4; i++) {
 	row = Math.floor(i/2);
 	col = i%2 ;
-	createTextButton(WIDTH/5 + (WIDTH/2 - WIDTH/5) * col, HEIGHT/8 + (HEIGHT/2 - HEIGHT/8) * row, (HEIGHT/2-HEIGHT/8)+"px", (WIDTH/2-WIDTH/5)+"px", undefined, createLinkWithData("questionScreen.html", "category="+subjects[i]), subjects[i]);
+	createTextButton(WIDTH/5 + (WIDTH/2 - WIDTH/5) * col, HEIGHT/8 + (HEIGHT/2 - HEIGHT/8) * row, (HEIGHT/2-HEIGHT/8)+"px", (WIDTH/2-WIDTH/5)+"px", undefined, createLinkWithData("questionScreen.html", ["category="+subjects[i]]), subjects[i]);
 
 
 };

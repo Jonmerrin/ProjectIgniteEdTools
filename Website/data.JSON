@@ -4,16 +4,17 @@ data = {
 			"math": {
 				"name" 		  : "math",
 				"questions"   : [
-						     {"answers":["1","2","3","4"], "correctAnswer":"3", "text": "question text"}
+						     {"answers":["15","96","54","48"], "correctAnswer":"54", "text": "What is 9X6"},
+						     {"answers":["2x","4x^2","x","4x"], "correctAnswer":"4x", "text": "What is f'(2x^2)"}
 							    ]
 			},
 			
-			"science":{
-			"name"        : "science",
-			"subcategory" : {
-							  "name" : "physics",
-							  "questions":[]
-							}
+			"history":{
+			"name"        : "history",
+				"questions"   : [
+						     {"answers":["Van Buren","Jackson","Reagan","Tyler"], "correctAnswer":"Van Buren", "text": "Who was the 8th president of the USA"},
+						     {"answers":["One Direction","Rolling Stones","The Beatles","Jackson 5"], "correctAnswer":"The Beatles", "text": "What music group wrote 'Hey Jude'"}
+							    ]
 			}
 		}
 
