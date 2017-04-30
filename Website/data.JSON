@@ -15,6 +15,20 @@ data = {
 						     {"answers":["Van Buren","Jackson","Reagan","Tyler"], "correctAnswer":"Van Buren", "text": "Who was the 8th president of the USA"},
 						     {"answers":["One Direction","Rolling Stones","The Beatles","Jackson 5"], "correctAnswer":"The Beatles", "text": "What music group wrote 'Hey Jude'"}
 							    ]
+			},
+			"science":{
+			"name"        : "history",
+				"questions"   : [
+						     {"answers":["Van Buren","Jackson","Reagan","Tyler"], "correctAnswer":"Van Buren", "text": "Who was the 8th president of the USA"},
+						     {"answers":["One Direction","Rolling Stones","The Beatles","Jackson 5"], "correctAnswer":"The Beatles", "text": "What music group wrote 'Hey Jude'"}
+							    ]
+			},
+			"random":{
+			"name"        : "history",
+				"questions"   : [
+						     {"answers":["Van Buren","Jackson","Reagan","Tyler"], "correctAnswer":"Van Buren", "text": "Who was the 8th president of the USA"},
+						     {"answers":["One Direction","Rolling Stones","The Beatles","Jackson 5"], "correctAnswer":"The Beatles", "text": "What music group wrote 'Hey Jude'"}
+							    ]
 			}
 		}
 
