@@ -17,17 +17,21 @@ data = {
 							    ]
 			},
 			"science":{
-			"name"        : "history",
+			"name"        : "science",
 				"questions"   : [
-						     {"answers":["Van Buren","Jackson","Reagan","Tyler"], "correctAnswer":"Van Buren", "text": "Who was the 8th president of the USA"},
-						     {"answers":["One Direction","Rolling Stones","The Beatles","Jackson 5"], "correctAnswer":"The Beatles", "text": "What music group wrote 'Hey Jude'"}
+						     {"answers":["mass x speed","mass x velocity","velocity x speed","weight x velocity"], "correctAnswer":"mass x velocity", "text": "Which of these represents momentum?"},
+						     {"answers":["Elliptical Galaxy","Spiral Galaxy","Regular Galaxy","Irregular Galaxy"], "correctAnswer":"Regular Galaxy", "text": "Which of the following is not a type of galaxy?"}
 							    ]
 			},
 			"random":{
-			"name"        : "history",
+			"name"        : "random",
 				"questions"   : [
 						     {"answers":["Van Buren","Jackson","Reagan","Tyler"], "correctAnswer":"Van Buren", "text": "Who was the 8th president of the USA"},
-						     {"answers":["One Direction","Rolling Stones","The Beatles","Jackson 5"], "correctAnswer":"The Beatles", "text": "What music group wrote 'Hey Jude'"}
+						     {"answers":["One Direction","Rolling Stones","The Beatles","Jackson 5"], "correctAnswer":"The Beatles", "text": "What music group wrote 'Hey Jude'"},
+   						     {"answers":["mass x speed","mass x velocity","velocity x speed","weight x velocity"], "correctAnswer":"mass x velocity", "text": "Which of these represents momentum?"},
+						     {"answers":["Elliptical Galaxy","Spiral Galaxy","Regular Galaxy","Irregular Galaxy"], "correctAnswer":"Regular Galaxy", "text": "Which of the following is not a type of galaxy?"},
+						     {"answers":["15","96","54","48"], "correctAnswer":"54", "text": "What is 9X6"},
+						     {"answers":["2x","4x^2","x","4x"], "correctAnswer":"4x", "text": "What is f'(2x^2)"}
 							    ]
 			}
 		}

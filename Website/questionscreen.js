@@ -54,7 +54,7 @@ for(i=0;i<4;i++){
 
 
 
-createTextButton(20, HEIGHT-HEIGHT/6-20, (HEIGHT/6)+"px", (WIDTH/8)+"px", undefined, createLink("afterquestionincorrect.html"), "Give Up", textColor);
+createTextButton(20, HEIGHT-HEIGHT/6-20, (HEIGHT/6)+"px", (WIDTH/8)+"px", undefined, createLinkWithData("afterquestionincorrect.html", ["subject="+subject, "answer=" + correctAnswer]), "Give Up", textColor);
 
 
 createTextButton(WIDTH*(7/8)-20, HEIGHT-HEIGHT/6-20, (HEIGHT/6)+"px", (WIDTH/8)+"px", undefined, function(){document.location.reload();}, "Skip", textColor);

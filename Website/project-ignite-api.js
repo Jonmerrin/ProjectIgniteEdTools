@@ -17,6 +17,15 @@ var loadRandomQuestion = function(categoryList){
 	return superCat.questions[(Math.floor(Math.random()*(superCat.questions.length)))];
 }
 
+function replaceAll(s, s1, s2){
+	temp = "";
+	list = s.split(s1);
+	for (var i = 0; i < list.length-1; i++) {
+		temp += list[i]+s2;
+	};
+	return temp + list[list.length-1];
+}
+
 function shuffle(array) {
     for (var i = array.length - 1; i > 0; i--) {
         var j = Math.floor(Math.random() * (i + 1));
@@ -35,9 +44,9 @@ var parseInfo = function(){
 	for (var i = 0; i < info.length; i++) {
 		var item = info[i].split("=");
 		if(item[0] == "category"){
-			dataL.categoryList.push(item[1].replace("%20", " "));
+			dataL.categoryList.push(replaceAll(item[1],"%20", " "));
 		} else {
-			dataL[item[0]] = item[1].replace("%20", " ");
+			dataL[item[0]] = replaceAll(item[1], "%20", " ");
 		}
 	};
 	return dataL;

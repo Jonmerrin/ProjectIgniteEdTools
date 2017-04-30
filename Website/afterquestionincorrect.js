@@ -18,6 +18,6 @@ createText(500, (HEIGHT/5), "Arial", 40, "Your Answer is Incorrect.", false, 5, 
 
 createText(500, (HEIGHT/3), "Arial", 40, "The Correct Answer is "+answer, false, 5, textColor)
 
-createTextButton(WIDTH - WIDTH, HEIGHT-HEIGHT/6, length=(HEIGHT/6)+"px", width=(WIDTH/8)+"px", undefined, createLink("afterquestionincorrect.html"), "Give Up", textColor);
+createTextButton(WIDTH - WIDTH, HEIGHT-HEIGHT/6, length=(HEIGHT/6)+"px", width=(WIDTH/8)+"px", undefined, createLink("index.html"), "Give Up", textColor);
 
-createTextButton(WIDTH - WIDTH/8, HEIGHT-HEIGHT/6, length=(HEIGHT/6)+"px", width=(WIDTH/8)+"px", undefined, function(){document.location.reload();}, "Skip", textColor);
+createTextButton(WIDTH - WIDTH/8, HEIGHT-HEIGHT/6, length=(HEIGHT/6)+"px", width=(WIDTH/8)+"px", undefined, createLinkWithData("questionscreen.html",["category="+subject]), "Next", textColor);
