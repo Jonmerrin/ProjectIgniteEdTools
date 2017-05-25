@@ -9,7 +9,7 @@ createImgButton(0, 0, length=(HEIGHT*3/32)+"px", width=(HEIGHT*3/32)+"px", undef
 createHeader(600, (HEIGHT/32), "Arial", (HEIGHT/16), "Leader Board");
 
 
-createTable(200,200, 1200, "Arial", 50, ["Rank", "Name", "Score"],
+createTable(200,200, 1200, "Arial", 100, ["Rank", "Name", "Score"],
 	[
 		["1", "Player 1", "6023"],
 		["2", "Player 2", "5492"],
