@@ -1,6 +1,6 @@
 var WIDTH  = window.innerWidth;
 var HEIGHT = window.innerHeight;
-var data   = $.getJSON("data.json");
+//var data   = JSON.parse(metadata);
 
 var setBackgroundColor = function(color){
 	$("body").css("background-color", color);
@@ -10,11 +10,46 @@ var setBackgroundImage = function(path){
 }
 
 var loadRandomQuestion = function(categoryList){
-	var superCat = data;
+	var superCat = data.categories;
 	for (var i = 0; i < categoryList.length; i++) {
 		superCat = superCat[categoryList[i]];
 	};
-	return superCat.questions[(Math.floor(Math.random()*4))];
+	return superCat.questions[(Math.floor(Math.random()*(superCat.questions.length)))];
+}
+
+function replaceAll(s, s1, s2){
+	temp = "";
+	list = s.split(s1);
+	for (var i = 0; i < list.length-1; i++) {
+		temp += list[i]+s2;
+	};
+	return temp + list[list.length-1];
+}
+
+function shuffle(array) {
+    for (var i = array.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
+    return array;
+}
+
+var parseInfo = function(){
+	var dataL = {"categoryList" : []};
+	var infoTemp = document.location.href.split('?')[1]
+	if(infoTemp == undefined) {return {};}
+	var info = infoTemp.split('&');
+	for (var i = 0; i < info.length; i++) {
+		var item = info[i].split("=");
+		if(item[0] == "category"){
+			dataL.categoryList.push(replaceAll(item[1],"%20", " "));
+		} else {
+			dataL[item[0]] = replaceAll(item[1], "%20", " ");
+		}
+	};
+	return dataL;
 }
 
 var createImgButton = function(x, y, length="10px", width="10px", label=undefined, f=undefined, img=undefined, opacity = 1){
@@ -88,6 +123,20 @@ var createLink = function(URL){
 	return function(){
 		window.location.href = URL;
 	};
+}
+
+var createLinkWithData = function(URL, info){
+
+	var newURL = URL;
+	for (var i = 0; i < info.length; i++) {
+		if(i==0){
+			newURL += "?";
+		} else {
+			newURL += "&";
+		}
+		newURL+=info[i];
+	};
+	return createLink(newURL);
 }
 
 var createTable = function(x,y,width, font, size, headContent, content, border=false, rowstripe=true){
