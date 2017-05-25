@@ -8,7 +8,7 @@ var black = "#000000";
 var yellow = "#FFFF00";
 
 function isEven(n){
-	return (n%2 === 0);
+	return (n%2 == 0);
 }
 
 function drawBahamas(x, y, width, height){

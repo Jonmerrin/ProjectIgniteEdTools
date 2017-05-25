@@ -5,7 +5,7 @@ var complementColor = "#FF4466"
 
 createImgButton(0, 0, length=(HEIGHT*3/32)+"px", width=(HEIGHT*3/32)+"px", undefined, undefined, "homebutton.png", 1);
 
-createHeader(700, (HEIGHT/32), "Arial", (HEIGHT/24), "Subject");
+createHeader(700, (HEIGHT/16), "Arial", (HEIGHT/24), "Subject");
 
 createText(500, (HEIGHT/5), "Arial", 40, "Your Answer is Incorrect.", false, 5, textColor)
 
