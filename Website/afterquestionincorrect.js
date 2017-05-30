@@ -4,14 +4,10 @@ var textColor = "#1E1E17"
 var complementColor = "#FF4466"
 
 
-<<<<<<< HEAD
-createHeader(700, (HEIGHT/16), "Arial", (HEIGHT/24), "Subject");
-=======
 var info = parseInfo();
 var subject = info.subject;
 var qtext   = info.text;
 var answer  = info.answer;
->>>>>>> origin/master
 
 
 createImgButton(0, 0, length=(HEIGHT*3/32)+"px", width=(HEIGHT*3/32)+"px", undefined, createLink("index.html"), "homebutton.png", 1);
